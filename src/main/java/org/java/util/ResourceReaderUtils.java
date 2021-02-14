@@ -22,8 +22,8 @@ public abstract class ResourceReaderUtils {
             }
             bufferedReader.close();
         }catch (final IllegalArgumentException | IOException iae){
-            log.error("Class: ResourceReaderUtils, fileName: {}, file converted into list, catched exception: {}", fileName, iae);
-            iae.printStackTrace();
+            log.error("Class: ResourceReaderUtils, fileName: {}, file is not converted into list, catched exception message: {}", fileName, iae.getMessage());
+            return new LinkedList<>();
         }
         log.debug("Class: ResourceReaderUtils, fileName: {}, file converted into list", fileName);
         return list;

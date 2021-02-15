@@ -76,7 +76,7 @@ Util class designed to read Resources directory of root source as a stream and c
 
 ==== Method Detail
 
-java.io.InputStream getFileFromResourceAsStream(String fileName)
+java.io.InputStream *getFileFromResourceAsStream(String fileName)*
 
 *Parameters:* fileName - name of the File.
 
@@ -96,7 +96,7 @@ into String LinkedList object.
 
 ==== Method Detail
 
-List<String> bufferedResourceReaderToList(String fileName)
+List<String> *bufferedResourceReaderToList(String fileName)*
 
 *Parameters:* fileName - name of the File.
 
@@ -121,7 +121,7 @@ An interface with declared method designed to be implemented for gender detectio
 
 ==== Method Detail
 
-org.java.model.ResponseDto detectGender(RequestDto requestDto)
+org.java.model.ResponseDto *detectGender(RequestDto requestDto)*
 
 *Parameters:* requestDto - RequestDto object.
 
@@ -141,7 +141,7 @@ and two private methods used to desribe two algorithms of gender detection.
 
 ==== Method Detail
 
-org.java.model.ResponseDto detectGender(RequestDto requestDto)
+org.java.model.ResponseDto *detectGender(RequestDto requestDto)*
 
 *Parameters:* requestDto - RequestDto object.
 
@@ -172,7 +172,7 @@ and retrieving existing list of male and female names respectively.
 
 ==== Method Detail
 
-org.java.model.ResourceDto getListOfNames()
+org.java.model.ResourceDto *getListOfNames()*
 
 *Parameters:* no parameters needed
 
@@ -180,7 +180,7 @@ org.java.model.ResourceDto getListOfNames()
 
 '''
 
-org.java.model.ResponseDto detectGender(RequestDto requestDto)
+org.java.model.ResponseDto *detectGender(RequestDto requestDto)*
 
 *Parameters:* requestDto - RequestDto object.
 
@@ -203,7 +203,7 @@ and retrieving existing list of male and female names respectively.
 
 ==== Method Detail
 
-org.java.model.ResourceDto getListOfNames()
+org.java.model.ResourceDto *getListOfNames()*
 
 *Parameters:* no parameters needed
 
@@ -211,7 +211,7 @@ org.java.model.ResourceDto getListOfNames()
 
 '''
 
-org.java.model.ResponseDto detectGender(RequestDto requestDto)
+org.java.model.ResponseDto *detectGender(RequestDto requestDto)*
 
 *Parameters:* requestDto - RequestDto object.
 

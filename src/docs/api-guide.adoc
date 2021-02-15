@@ -80,7 +80,7 @@ java.io.InputStream getFileFromResourceAsStream(String fileName)
 *Parameters:* fileName - name of the File.
 
 *Returns:* reference to InputStream Object of file.
-/////////////////////////////////
+
 === ResourceReaderUtils
 
 Util abstract class designed to read InputStream Object using BufferedReader and convert it into String LinkedList object.

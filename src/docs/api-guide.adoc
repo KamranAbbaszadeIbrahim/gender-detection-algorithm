@@ -149,3 +149,73 @@ org.java.model.ResponseDto detectGender(RequestDto requestDto)
 
 [[overview_service]]
 == Service Layer
+
+The service layer of application invokes corresponding implementation of util and algorithm classes. 
+
+Service Layer consist of a GenderDetectionService interface with two declared methods and 
+a GenderDetectionServiceImpl class with implementation of predeclared methods.
+
+=== GenderDetectionService
+
+An interface with declared methods designed to be implemented for invoking gender detection algorithms 
+and retrieving existing list of male and female names respectively.
+
+|===
+| Modifier and Type | Method and Description
+
+| org.java.model.ResourceDto
+| `getListOfNames()` - Can be used to invoke utility objects to read existing list of male and female names and wrap into ResourceDto object
+
+| org.java.model.ResponseDto
+| `detectGender(RequestDto requestDto)` - Can be used to invoke gender detection algorithms and pass results to requester
+|===
+
+==== Method Detail
+
+org.java.model.ResourceDto getListOfNames()
+
+*Parameters:* no parameters needed
+
+*Returns:* reference to ResourceDto object, which wrapes the List of male and female names.
+
+'''
+
+org.java.model.ResponseDto detectGender(RequestDto requestDto)
+
+*Parameters:* requestDto - RequestDto object.
+
+*Returns:* reference to ResponseDto object, with results of passing name through two algorithms.
+
+=== GenderDetectionServiceImpl
+
+An implementation of GenderDetectionService interface with declared methods designed for invoking gender detection algorithms 
+and retrieving existing list of male and female names respectively.
+
+|===
+| Modifier and Type | Method and Description
+
+| org.java.model.ResourceDto
+| `getListOfNames()` - Used to invoke utility objects to read existing list of male and female names and wrap into ResourceDto object
+
+| org.java.model.ResponseDto
+| `detectGender(RequestDto requestDto)` - Used to invoke gender detection algorithms and pass results to requester
+|===
+
+==== Method Detail
+
+org.java.model.ResourceDto getListOfNames()
+
+*Parameters:* no parameters needed
+
+*Returns:* reference to ResourceDto object, which wrapes the List of male and female names.
+
+'''
+
+org.java.model.ResponseDto detectGender(RequestDto requestDto)
+
+*Parameters:* requestDto - RequestDto object.
+
+*Returns:* reference to ResponseDto object, with results of passing name through two algorithms.
+
+[[overview_controller]]
+== Controller Layer

@@ -269,7 +269,9 @@ org.java.model.ResponseDto *detectGender(RequestDto requestDto)*
 [[overview_controller]]
 == List of Gradle Dependencies
 
-++++
+====
+
+----
 
 dependencies {
     //START Spring
@@ -297,4 +299,6 @@ dependencies {
     }
 }
 
-++++
+----
+
+====

@@ -60,7 +60,8 @@ If frequency of male name`s occurance is more than for female names, then result
 [[overview_util]]
 == Utility classes
 
-In order to evaluate the fastest manipulations with Flat Text Files two utils classes were created. They are: *FileResourcesUtils* and *ResourceReaderUtils*.
+In order to evaluate the fastest manipulations with Flat Text Files two utils classes were 
+created. They are: *FileResourcesUtils* and *ResourceReaderUtils*.
 
 === FileResourcesUtils
 
@@ -83,7 +84,8 @@ java.io.InputStream getFileFromResourceAsStream(String fileName)
 
 === ResourceReaderUtils
 
-Util abstract class designed to read InputStream Object using BufferedReader and convert it into String LinkedList object.
+Util abstract class designed to read InputStream Object using BufferedReader and convert it 
+into String LinkedList object.
 
 |===
 | Modifier and Type | Method and Description
@@ -102,3 +104,48 @@ List<String> bufferedResourceReaderToList(String fileName)
 
 [[overview_algorithm]]
 == Algorithm implementation
+
+In order to implement gender detection algorithms a GenderDetectionAlgorithm interface and 
+GenderDetectionAlgorithmImpl class were created.
+
+=== GenderDetectionAlgorithm
+
+An interface with declared method designed to be implemented for gender detection.
+
+|===
+| Modifier and Type | Method and Description
+
+| org.java.model.ResponseDto
+| `detectGender(RequestDto requestDto)` - Can be used to detect gender by name
+|===
+
+==== Method Detail
+
+org.java.model.ResponseDto detectGender(RequestDto requestDto)
+
+*Parameters:* requestDto - RequestDto object.
+
+*Returns:* reference to ResponseDto object, with results of passing name through two algorithms.
+
+=== GenderDetectionAlgorithmImpl
+
+An implementation of GenderDetectionAlgorithm interface with overriden method detectGender() 
+and two private methods used to desribe two algorithms of gender detection.
+
+|===
+| Modifier and Type | Method and Description
+
+| org.java.model.ResponseDto
+| `detectGender(RequestDto requestDto)` - Used to detect gender by name and construct ResponseDto object.
+|===
+
+==== Method Detail
+
+org.java.model.ResponseDto detectGender(RequestDto requestDto)
+
+*Parameters:* requestDto - RequestDto object.
+
+*Returns:* reference to ResponseDto object, with results of passing name through two algorithms.
+
+[[overview_service]]
+== Service Layer

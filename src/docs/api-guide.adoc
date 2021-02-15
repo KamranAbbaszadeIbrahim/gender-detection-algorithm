@@ -1,4 +1,4 @@
-= Gender Detection API Guide
+= Gender Detection API
 Kamran Abbaszade;
 :doctype: book
 :icons: font
@@ -8,3 +8,45 @@ Kamran Abbaszade;
 :sectlinks:
 :operation-curl-request-title: Example request
 :operation-http-response-title: Example response
+
+[[overview]]
+= Overview
+
+[[overview_model_dto]]
+== Model DTO Classes
+
+For implementation of gender detection algorithms three model classes were designed
+
+RequestDto
+|===
+| Modifier and Type | Field and Description
+
+| String
+| `name` - Used to hold name for further evaluation through algorithms of gender detection
+|===
+
+ResourceDto
+|===
+| Modifier and Type | Field and Description
+
+| List<String>
+| `listOfMaleNames` - Used to keep list of male names
+
+| List<String>
+| `listOfFemaleNames` - Used to keep list of female names
+|===
+
+ResponseDto
+|===
+| Modifier and Type | Field and Description
+
+| String
+| `firstAlgorithmResult` - Used to keep results of analysing name using first algorithm, when only first token is checked
+
+| String
+| `secondAlgorithmResult` - Used to keep results of analysing name using second algorithm, when all token are checked. 
+If frequency of male name`s occurance is more than for female names, then result is Male, oppositly - Female. In case of equal frequency - INCONCLUSIVE
+|===
+
+[[overview_util]]
+== Utility classes

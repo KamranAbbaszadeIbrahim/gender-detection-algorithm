@@ -219,3 +219,82 @@ org.java.model.ResponseDto *detectGender(RequestDto requestDto)*
 
 [[overview_controller]]
 == Controller Layer
+
+The Controller layer of application designed to accept Http requests sent to two endpoints: `*"/resource"*` and `*"/request"*`.
+The corresponding service layer methods are invoke when HTTP Get request with no arguments is sent to `*"/resource"*` endpoint
+and when HTTP Post request with JSON file in body representing RequestDto object is sent to `*"/request"*`.
+
+=== GenderDetectionController
+
+Controller class with two methods defined in order to invoke service object`s methods and pass results to Http Client
+
+=== JSON file example for HTTP POST request
+====
+
+----
+{
+    "name": "OLIVER JACK"
+}
+----
+
+====
+
+
+|===
+| Modifier and Type | Method and Description
+
+| org.java.model.ResourceDto
+| `getListOfNames()` - Used to invoke service object which executes org.java.service.GenderDetectionServiceImpl#getListOfNames()
+
+| org.java.model.ResponseDto
+| `detectGender(RequestDto requestDto)` - Used to invoke service object which executes org.java.service.GenderDetectionServiceImpl#detectGender(RequestDto requestDto)
+|===
+
+==== Method Detail
+
+org.java.model.ResourceDto *getListOfNames()*
+
+*Parameters:* no parameters needed
+
+*Returns:* reference to ResourceDto object, which wrapes the List of male and female names.
+
+'''
+
+org.java.model.ResponseDto *detectGender(RequestDto requestDto)*
+
+*Parameters:* requestDto - RequestDto object.
+
+*Returns:* reference to ResponseDto object, with results of passing name through two algorithms.
+
+[[overview_controller]]
+== List of Gradle Dependencies
+
+++++
+
+dependencies {
+    //START Spring
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    //END Spring
+
+    //START Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    //END Lombok
+
+    //START Additional Dependencies
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.0'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
+    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.3-groovy-2.5'
+    testCompile platform("org.spockframework:spock-bom:2.0-M4-groovy-3.0")
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.7', ext: 'pom'
+    compile 'org.springframework.restdocs:spring-restdocs-asciidoctor'
+    //END Additional Dependencies
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: "com.vaadin.external.google", module:"android-json"
+    }
+}
+
+++++

@@ -15,9 +15,12 @@ Kamran Abbaszade;
 [[overview_model_dto]]
 == Model DTO Classes
 
-For implementation of gender detection algorithms three model classes were designed
+For implementation of gender detection algorithms three model classes were designed.
 
-RequestDto
+=== RequestDto
+
+Model POJO class representing the JSON object provided in Http Post request to `"/request"` endpoint.
+
 |===
 | Modifier and Type | Field and Description
 
@@ -25,7 +28,10 @@ RequestDto
 | `name` - Used to hold name for further evaluation through algorithms of gender detection
 |===
 
-ResourceDto
+=== ResourceDto
+
+Model POJO class representing the JSON object retrieved from Http Get request to `"/resource"` endpoint.
+
 |===
 | Modifier and Type | Field and Description
 
@@ -36,7 +42,10 @@ ResourceDto
 | `listOfFemaleNames` - Used to keep list of female names
 |===
 
-ResponseDto
+=== ResponseDto
+
+Model POJO class representing the JSON object retrieved from Http Post request to `"/request"` endpoint.
+
 |===
 | Modifier and Type | Field and Description
 
@@ -50,3 +59,46 @@ If frequency of male name`s occurance is more than for female names, then result
 
 [[overview_util]]
 == Utility classes
+
+In order to evaluate the fastest manipulations with Flat Text Files two utils classes were created. They are: *FileResourcesUtils* and *ResourceReaderUtils*.
+
+=== FileResourcesUtils
+
+Util class designed to read Resources directory of root source as a stream and convert it into InputStream Object.
+
+|===
+| Modifier and Type | Method and Description
+
+| InputStream
+| `getFileFromResourceAsStream(String fileName)` - Used to get File from Resource folder as stream
+|===
+
+==== Method Detail
+
+java.io.InputStream getFileFromResourceAsStream(String fileName)
+
+*Parameters:* fileName - name of the File.
+
+*Returns:* reference to InputStream Object of file.
+/////////////////////////////////
+=== ResourceReaderUtils
+
+Util abstract class designed to read InputStream Object using BufferedReader and convert it into String LinkedList object.
+
+|===
+| Modifier and Type | Method and Description
+
+| List<String>
+| `bufferedResourceReaderToList(String fileName)` - Used to read file and convert it into List of Strings
+|===
+
+==== Method Detail
+
+List<String> bufferedResourceReaderToList(String fileName)
+
+*Parameters:* fileName - name of the File.
+
+*Returns:* reference to List of Strings Object represented as LinkedList.
+
+[[overview_algorithm]]
+== Algorithm implementation

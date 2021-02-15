@@ -76,7 +76,7 @@ public class GenderDetectionAlgorithmImpl implements GenderDetectionAlgorithm{
 
         if(countMaleNameMatch>countFemaleNameMatch){
             log.debug("Class: GenderDetectionAlgorithmImpl, " +
-                "method: detectGenderOneTokenChecked," +
+                "method: detectGenderAllTokensChecked," +
                 "name: [{}]," +
                 "male name frequency: [{}]," +
                 "female name frequency: [{}]," +
@@ -86,7 +86,7 @@ public class GenderDetectionAlgorithmImpl implements GenderDetectionAlgorithm{
         }
         else if(countMaleNameMatch<countFemaleNameMatch){
             log.debug("Class: GenderDetectionAlgorithmImpl, " +
-                "method: detectGenderOneTokenChecked," +
+                "method: detectGenderAllTokensChecked," +
                 "name: [{}]," +
                 "male name frequency: [{}]," +
                 "female name frequency: [{}]," +
@@ -95,7 +95,7 @@ public class GenderDetectionAlgorithmImpl implements GenderDetectionAlgorithm{
             return FEMALE;
         }
         log.debug("Class: GenderDetectionAlgorithmImpl, " +
-                "method: detectGenderOneTokenChecked," +
+                "method: detectGenderAllTokensChecked," +
                 "name: [{}]," +
                 "male name frequency: [{}]," +
                 "female name frequency: [{}]," +

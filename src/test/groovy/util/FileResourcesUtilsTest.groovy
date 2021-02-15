@@ -1,3 +1,5 @@
+package util
+
 import org.java.util.FileResourcesUtils
 import spock.lang.Specification
 

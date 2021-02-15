@@ -1,3 +1,5 @@
+package util
+
 import org.java.util.ResourceReaderUtils
 import spock.lang.Specification
 

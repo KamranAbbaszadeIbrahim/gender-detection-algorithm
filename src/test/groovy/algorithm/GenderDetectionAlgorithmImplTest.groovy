@@ -1,3 +1,5 @@
+package algorithm
+
 import org.java.algorithm.GenderDetectionAlgorithm
 import org.java.algorithm.GenderDetectionAlgorithmImpl
 import org.java.model.RequestDto
